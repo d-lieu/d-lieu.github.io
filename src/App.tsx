@@ -1,14 +1,15 @@
 import "./App.css";
-import { Box, Typography, Card, CardMedia } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import img from "./bg.jpg";
 
-import { AGENTS } from "./constants/agents";
-import { MAPS } from "./constants/maps";
+import * as agents from "./constants/agents";
+import * as maps from "./constants/maps";
 import { VodCard } from "./components/VodCard";
 
 function App() {
-  const { NEON, OMEN } = AGENTS;
-  const { SPLIT, PEARL } = MAPS;
+  const { PEARL, SPLIT, LOTUS, ICEBOX, HAVEN, ASCENT, FRACTURE } = maps;
+  const { NEON, OMEN, ASTRA } = agents;
+
   return (
     <Box
       sx={{
@@ -28,7 +29,7 @@ function App() {
           height: "80vh",
         }}
       >
-        <VodCard agent={OMEN} map={PEARL} />
+        <VodCard agent={ASTRA} map={FRACTURE} />
         <VodCard agent={NEON} map={PEARL} />
         <VodCard agent={NEON} map={SPLIT} />
         <VodCard agent={OMEN} map={SPLIT} />
