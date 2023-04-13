@@ -1,25 +1,39 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import { Box, Typography, Card, CardMedia } from "@mui/material";
+import img from "./bg.jpg";
+
+import { AGENTS } from "./constants/agents";
+import { MAPS } from "./constants/maps";
+import { VodCard } from "./components/VodCard";
 
 function App() {
+  const { NEON, OMEN } = AGENTS;
+  const { SPLIT, PEARL } = MAPS;
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Hello World
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Box
+      sx={{
+        height: "100vh",
+        backgroundImage: `url(${img})`,
+        backgroundSize: "cover",
+      }}
+      className="App"
+    >
+      <Typography pt={6} color="#FFFFFF" variant="h1">
+        VODs
+      </Typography>
+      <Box
+        sx={{
+          display: "flex",
+          flexDirection: "column",
+          height: "80vh",
+        }}
+      >
+        <VodCard agent={OMEN} map={PEARL} />
+        <VodCard agent={NEON} map={PEARL} />
+        <VodCard agent={NEON} map={SPLIT} />
+        <VodCard agent={OMEN} map={SPLIT} />
+      </Box>
+    </Box>
   );
 }
 
