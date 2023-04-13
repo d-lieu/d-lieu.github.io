@@ -10,11 +10,11 @@ export const VodCard = (props: VodCardProps) => {
     <Card
       sx={{
         height: "200px",
-        minWidth: "250px",
-        maxWidth: "1500px",
+        minWidth: "450px",
+        maxWidth: "1300px",
+        width: "100%",
         position: "relative",
         display: "flex",
-        mx: 18,
         backgroundColor: "#0a0a0a",
         mb: 4,
       }}
@@ -39,7 +39,7 @@ export const VodCard = (props: VodCardProps) => {
           }}
         >
           <Typography
-            gutterBottom
+            mb="0.8em"
             sx={{ alignSelf: "flex-end" }}
             variant="overline"
             color="#FFFFFF"

@@ -48,6 +48,95 @@ type Agent =
   | "Killjoy"
   | "Viper";
 
+export type AgentProps = Partial<Record<Agent, AgentInfo>>;
+
+export const AGENTS = [
+  {
+    name: "Neon",
+    image: neonImg,
+  },
+  {
+    name: "Omen",
+    image: omenImg,
+  },
+  {
+    name: "Sova",
+    image: sovaImg,
+  },
+  {
+    name: "Gekko",
+    image: gekkoImg,
+  },
+  {
+    name: "Brimstone",
+    image: brimImg,
+  },
+  {
+    name: "Breach",
+    image: breachImg,
+  },
+  {
+    name: "Fade",
+    image: fadeImg,
+  },
+  {
+    name: "Cypher",
+    image: cypherImg,
+  },
+  {
+    name: "Skye",
+    image: skyeImg,
+  },
+  {
+    name: "Kayo",
+    image: kayoImg,
+  },
+  {
+    name: "Harbor",
+    image: harborImg,
+  },
+  {
+    name: "Chamber",
+    image: chamberImg,
+  },
+  {
+    name: "Astra",
+    image: astraImg,
+  },
+  {
+    name: "Yoru",
+    image: yoruImg,
+  },
+  {
+    name: "Jett",
+    image: jettImg,
+  },
+  {
+    name: "Phoenix",
+    image: phoenixImg,
+  },
+  {
+    name: "Raze",
+    image: razeImg,
+  },
+  {
+    name: "Reyna",
+    image: reynaImg,
+  },
+  {
+    name: "Sage",
+    image: sageImg,
+  },
+  {
+    name: "Killjoy",
+    image: killImg,
+  },
+  {
+    name: "Viper",
+    image: viperImg,
+  },
+] as const;
+
 export const NEON: AgentInfo = {
   name: "Neon",
   image: neonImg,
