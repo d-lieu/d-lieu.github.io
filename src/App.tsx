@@ -3,6 +3,7 @@ import {
   Autocomplete,
   Box,
   Button,
+  Paper,
   Stack,
   TextField,
   Typography,
@@ -51,26 +52,48 @@ function App() {
         <Typography pt={6} color="#FFFFFF" variant="h1">
           VODs
         </Typography>
-        <Box sx={{ display: "flex", justifyContent: "space-evenly" }}>
-          <TextField
-            variant="filled"
-            onChange={(e) => setPlaylistLink(e.target.value)}
-          />
-          <Button variant="outlined" onClick={() => handleVideoData()}>
-            Get Playlist
-          </Button>
-        </Box>
 
-        <Autocomplete
-          sx={{ borderColor: "#FFFFFF" }}
-          multiple
-          options={searchTags}
-          defaultValue={searchFilter}
-          filterSelectedOptions
-          renderInput={(params) => <TextField {...params} label="Filter" />}
-          onChange={(_event, newValue) => setSearchFilter(newValue)}
-        />
+        <Paper elevation={12}>
+          <Box my={4} mx={4}>
+            <Box
+              sx={{
+                display: "flex",
+                alignItems: "baseline",
+                justifyContent: "start",
+                maxHeight: "80px",
+              }}
+            >
+              <TextField
+                sx={{ width: "80%", minHeight: "56px" }}
+                margin="normal"
+                variant="outlined"
+                onChange={(e) => setPlaylistLink(e.target.value)}
+              />
+              <Button
+                variant="outlined"
+                sx={{ minHeight: "56px", mx: "12px" }}
+                onClick={() => handleVideoData()}
+              >
+                Get Playlist
+              </Button>
+            </Box>
+
+            <Box sx={{ display: "flex", minHeight: "80px" }}>
+              <Autocomplete
+                multiple
+                options={searchTags}
+                defaultValue={searchFilter}
+                filterSelectedOptions
+                renderInput={(params) => (
+                  <TextField {...params} label="Filter" />
+                )}
+                onChange={(_event, newValue) => setSearchFilter(newValue)}
+              />
+            </Box>
+          </Box>
+        </Paper>
       </Stack>
+
       <Box
         sx={{
           display: "flex",
