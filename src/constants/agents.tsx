@@ -25,7 +25,7 @@ export type AgentInfo = {
   image: string;
 };
 
-type Agent =
+export type Agent =
   | "Neon"
   | "Omen"
   | "Sova"

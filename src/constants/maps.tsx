@@ -9,7 +9,7 @@ import breezeImg from "../images/breeze.png";
 import fractureImg from "../images/fracture.png";
 import lotusImg from "../images/lotus.png";
 
-type Maps =
+export type Map =
   | "Split"
   | "Haven"
   | "The Range"
@@ -22,50 +22,50 @@ type Maps =
   | "Lotus";
 
 export type MapInfo = {
-  name: Maps;
+  name: Map;
   image: string;
 };
 
-export const SPLIT: MapInfo = {
-  name: "Split",
-  image: splitImg,
-};
+export const MAPS = [
+  {
+    name: "Split",
+    image: splitImg,
+  },
+  {
+    name: "Pearl",
+    image: pearlImg,
+  },
+  {
+    name: "The Range",
+    image: rangeImg,
+  },
+  {
+    name: "Haven",
+    image: havenImg,
+  },
+  {
+    name: "Bind",
+    image: bindImg,
+  },
 
-export const PEARL: MapInfo = {
-  name: "Pearl",
-  image: pearlImg,
-};
-export const RANGE: MapInfo = {
-  name: "The Range",
-  image: rangeImg,
-};
-export const HAVEN: MapInfo = {
-  name: "Haven",
-  image: havenImg,
-};
-export const BIND: MapInfo = {
-  name: "Bind",
-  image: bindImg,
-};
-
-export const ASCENT: MapInfo = {
-  name: "Ascent",
-  image: ascentImg,
-};
-export const ICEBOX: MapInfo = {
-  name: "Icebox",
-  image: iceboxImg,
-};
-export const FRACTURE: MapInfo = {
-  name: "Fracture",
-  image: fractureImg,
-};
-export const BREEZE: MapInfo = {
-  name: "Breeze",
-  image: breezeImg,
-};
-
-export const LOTUS: MapInfo = {
-  name: "Lotus",
-  image: lotusImg,
-};
+  {
+    name: "Ascent",
+    image: ascentImg,
+  },
+  {
+    name: "Icebox",
+    image: iceboxImg,
+  },
+  {
+    name: "Fracture",
+    image: fractureImg,
+  },
+  {
+    name: "Breeze",
+    image: breezeImg,
+  },
+  {
+    name: "Lotus",
+    image: lotusImg,
+  },
+] as const;

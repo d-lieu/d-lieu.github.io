@@ -1,17 +1,18 @@
 import { Box, Card, CardMedia, Typography } from "@mui/material";
-import { AgentInfo } from "../constants/agents";
-import { MapInfo } from "../constants/maps";
+import { videoData } from "../App";
 
-type VodCardProps = { agent: AgentInfo; map: MapInfo };
+type VodCardProps = videoData;
 
-export const VodCard = (props: VodCardProps) => {
+export const VodCard = (props: { videos: VodCardProps }) => {
+  const { agent, agentImg, map, mapImg } = props.videos;
   const textCombiner = "<>";
+
   return (
     <Card
       sx={{
         height: "200px",
         minWidth: "450px",
-        maxWidth: "1300px",
+        maxWidth: "1000px",
         width: "100%",
         position: "relative",
         display: "flex",
@@ -29,7 +30,7 @@ export const VodCard = (props: VodCardProps) => {
             zIndex: 1,
           }}
           component="img"
-          image={props.agent.image}
+          image={agentImg}
         />
         <Box
           sx={{
@@ -44,7 +45,7 @@ export const VodCard = (props: VodCardProps) => {
             variant="overline"
             color="#FFFFFF"
           >
-            {props.agent.name + " " + textCombiner + " " + props.map.name}
+            {agent + " " + textCombiner + " " + map}
           </Typography>
           <CardMedia
             sx={{
@@ -54,7 +55,7 @@ export const VodCard = (props: VodCardProps) => {
               maxHeight: "200px",
             }}
             component="img"
-            image={props.map.image}
+            image={mapImg}
           />
         </Box>
       </Box>
