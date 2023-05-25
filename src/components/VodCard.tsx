@@ -4,7 +4,7 @@ import { videoData } from "../App";
 type VodCardProps = videoData;
 
 export const VodCard = (props: { videos: VodCardProps }) => {
-  const { agent, agentImg, map, mapImg } = props.videos;
+  const { agent, agentImg, map, mapImg, url, thumbnail } = props.videos;
   const textCombiner = "<>";
 
   return (
@@ -31,6 +31,19 @@ export const VodCard = (props: { videos: VodCardProps }) => {
           }}
           component="img"
           image={agentImg}
+        />
+        <CardMedia
+          sx={{
+            position: "absolute",
+            objectFit: "contain",
+            maxHeight: "170px",
+            left: "30%",
+            zIndex: 1,
+            borderRadius: "5px",
+          }}
+          component="img"
+          image={thumbnail}
+          onClick={() => window.open(url, "_blank", "noreferrer")}
         />
         <Box
           sx={{

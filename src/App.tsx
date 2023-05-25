@@ -23,6 +23,8 @@ export type videoData = {
   map: Map;
   mapImg: string;
   tags: (Agent | Map)[];
+  url: string;
+  thumbnail: string;
 };
 
 function App() {

@@ -5,7 +5,8 @@ const parsePlaylistData = (items) => {
     const descData = getTagsFromVideoDescription(item.snippet.description);
     return {
       title: item.snippet.title,
-      link: item.snippet.resourceId.videoId,
+      url: "https://youtube.com/watch?v=" + item.snippet.resourceId.videoId,
+      thumbnail: item.snippet.thumbnails.high.url,
       description: item.snippet.description,
       agent: descData?.agent,
       map: descData?.map,
